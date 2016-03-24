@@ -61,6 +61,14 @@ at_least_something_exists() {
 echo ""
 echo ""
 
+[[ $0 == *".sh" ]] || {
+  echo "    ${bold}Looks like you may be running this via curl...${normal}"
+  echo "    Feel free to audit this script at https://github.com/jasonvasquez/docker-nuke"
+  echo ""
+  sleep 3
+}
+
+
 at_least_something_exists || {
   echo "    Nothing to nuke!"
   echo ""
